@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Design Studio — Haute Interior Architecture & Design</title>
+  <meta name="description" content="Atelier Design Studio crafts bespoke residential and hospitality spaces worldwide, balancing quiet luxury, architectural restraint, and warm materiality.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif' fill='%23C27A56'>A</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            atelier: {
+              bg: '#FDFBF7',
+              surface: '#F8F4EC',
+              stone: '#ECE5DA',
+              'stone-light': '#F4EFE6',
+              'stone-border': '#E4DDD2',
+              charcoal: '#1F1F1F',
+              'charcoal-soft': '#313131',
+              'charcoal-muted': '#6B6864',
+              terracotta: '#C27A56',
+              'terracotta-dark': '#A35E3B',
+              'terracotta-light': '#DFC2B1',
+              accent: '#D4A373',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Cinzel"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+          },
+          boxShadow: {
+            'luxury': '0 20px 40px -15px rgba(31, 31, 31, 0.05)',
+            'luxury-hover': '0 28px 50px -12px rgba(194, 122, 86, 0.12)',
+            'subtle': '0 4px 20px -2px rgba(31, 31, 31, 0.03)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Luxury Polish & Subtle Scrollbar */
+    ::selection {
+      background-color: #DFC2B1;
+      color: #1F1F1F;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FDFBF7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D8CFC3;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C27A56;
+    }
+
+    .font-feature-settings {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    /* Subtle image zoom hover */
+    .img-zoom-container {
+      overflow: hidden;
+    }
+    .img-zoom-target {
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease;
+    }
+    .img-zoom-container:hover .img-zoom-target {
+      transform: scale(1.05);
+    }
+
+    /* Form input outline transition */
+    .luxury-input {
+      background-color: #FFFFFF;
+      border: 1px solid #E4DDD2;
+      transition: all 0.25s ease-in-out;
+    }
+    .luxury-input:focus {
+      outline: none;
+      border-color: #C27A56;
+      box-shadow: 0 0 0 3px rgba(194, 122, 86, 0.15);
+      background-color: #FFFFFF;
+    }
+  </style>
+</head>
+
+<body class="bg-atelier-bg text-atelier-charcoal font-sans antialiased selection:bg-atelier-terracotta-light selection:text-atelier-charcoal min-h-screen flex flex-col">
+
+  <!-- ======================================================== -->
+  <!-- 1. STICKY NAVBAR -->
+  <!-- ======================================================== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-atelier-bg/90 backdrop-blur-md border-b border-atelier-stone-border/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        
+        <!-- Brand Logo -->
+        <a href="#hero" class="group flex flex-col focus:outline-none" aria-label="Atelier Design Studio Home">
+          <span class="font-serif text-2xl sm:text-3xl tracking-[0.12em] font-medium text-atelier-charcoal uppercase group-hover:text-atelier-terracotta transition-colors duration-300">
+            Atelier
+          </span>
+          <span class="text-[10px] sm:text-xs tracking-[0.35em] text-atelier-charcoal-muted uppercase font-light mt-0.5">
+            Design Studio
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide" aria-label="Main Navigation">
+          <a href="#about" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            About
+          </a>
+          <a href="#materials" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Materiality
+          </a>
+          <a href="#services" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Services
+          </a>
+          <a href="#portfolio" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Portfolio
+          </a>
+          <a href="#transformation" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Metamorphosis
+          </a>
+          <a href="#methodology" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Process
+          </a>
+          <a href="#contact" class="text-atelier-charcoal/80 hover:text-atelier-terracotta transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-atelier-terracotta hover:after:w-full after:transition-all after:duration-300">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA & Mobile Toggle Button -->
+        <div class="flex items-center space-x-4">
+          <!-- Get in Touch Button (Desktop) -->
+          <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-atelier-charcoal text-atelier-bg hover:bg-atelier-terracotta transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+            Get in Touch
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 text-atelier-charcoal hover:text-atelier-terracotta focus:outline-none" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <svg id="hamburgerIcon" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="closeIcon" class="w-6 h-6 stroke-current hidden" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-atelier-surface/98 border-b border-atelier-stone-border px-6 pt-4 pb-8 space-y-4 backdrop-blur-xl">
+      <nav class="flex flex-col space-y-4 text-base font-medium tracking-wider uppercase text-atelier-charcoal pt-2">
+        <a href="#about" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">About</a>
+        <a href="#materials" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Materiality</a>
+        <a href="#services" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Services</a>
+        <a href="#portfolio" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Portfolio</a>
+        <a href="#transformation" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Metamorphosis</a>
+        <a href="#methodology" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Process</a>
+        <a href="#contact" class="mobile-nav-link py-2 border-b border-atelier-stone-border/50 hover:text-atelier-terracotta transition-colors">Contact</a>
+      </nav>
+      <div class="pt-4">
+        <a href="#contact" class="mobile-nav-link w-full inline-flex items-center justify-center py-3 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-atelier-terracotta text-white hover:bg-atelier-terracotta-dark transition-colors shadow-sm">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="flex-grow">
+
+    <!-- ======================================================== -->
+    <!-- 2. HERO SECTION -->
+    <!-- ======================================================== -->
+    <section id="hero" class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-36 overflow-hidden">
+      <!-- Subtle Decorative Background Elements -->
+      <div class="absolute top-1/4 right-[-5%] w-[450px] h-[450px] rounded-full bg-atelier-terracotta-light/15 filter blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute bottom-10 left-[-10%] w-[380px] h-[380px] rounded-full bg-atelier-stone/50 filter blur-2xl pointer-events-none -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Editorial Headline & Copy (7 cols) -->
+          <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+            
+            <!-- Studio Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-atelier-surface border border-atelier-stone-border text-xs uppercase tracking-[0.25em] text-atelier-charcoal-muted">
+              <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta animate-pulse"></span>
+              Bespoke Interior Architecture · Est. 2011
+            </div>
+
+            <!-- Bold Editorial Serif Headline -->
+            <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal leading-[1.08] tracking-[-0.01em] text-atelier-charcoal">
+              Sculpting spaces of <span class="italic font-light text-atelier-terracotta">quiet luxury</span> and enduring poise.
+            </h1>
+
+            <!-- Subheading -->
+            <p class="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-atelier-charcoal-muted font-light leading-relaxed">
+              Atelier Design Studio crafts deeply considered residential and boutique hospitality environments worldwide. We balance raw natural stone, tactile timber, and architectural restraint to curate sanctuaries that breathe with effortless elegance.
+            </p>
+
+            <!-- CTA Group -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5">
+              <a href="#portfolio" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-xs uppercase tracking-[0.22em] font-semibold bg-atelier-terracotta text-white hover:bg-atelier-terracotta-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group">
+                <span>Explore Selected Works</span>
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+
+              <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-xs uppercase tracking-[0.22em] font-medium border border-atelier-charcoal/30 text-atelier-charcoal hover:bg-atelier-charcoal hover:text-white transition-all duration-300">
+                Book Consultation
+              </a>
+            </div>
+
+            <!-- Micro Metrics Ticker -->
+            <div class="pt-8 sm:pt-10 grid grid-cols-3 gap-6 sm:gap-8 border-t border-atelier-stone-border/90 text-left">
+              <div>
+                <span class="block font-serif text-2xl sm:text-3xl text-atelier-charcoal font-medium">15+</span>
+                <span class="block text-xs uppercase tracking-wider text-atelier-charcoal-muted mt-0.5">Years of Craft</span>
+              </div>
+              <div>
+                <span class="block font-serif text-2xl sm:text-3xl text-atelier-charcoal font-medium">120+</span>
+                <span class="block text-xs uppercase tracking-wider text-atelier-charcoal-muted mt-0.5">Private Sanctuaries</span>
+              </div>
+              <div>
+                <span class="block font-serif text-2xl sm:text-3xl text-atelier-charcoal font-medium">18</span>
+                <span class="block text-xs uppercase tracking-wider text-atelier-charcoal-muted mt-0.5">Design Honors</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual Composition (5 cols) -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <!-- Main Feature Image Frame -->
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/80 bg-atelier-surface aspect-[4/5] img-zoom-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" 
+                  alt="Minimalist luxury interior with warm neutral tones, organic plaster, and bespoke timber millwork" 
+                  class="w-full h-full object-cover img-zoom-target"
+                  loading="eager"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
+                  <span class="text-[10px] uppercase tracking-[0.3em] font-light text-atelier-terracotta-light">Selected Residence</span>
+                  <p class="font-serif text-xl sm:text-2xl font-light">The Lake Como Residence</p>
+                </div>
+              </div>
+
+              <!-- Overlapping Floating Accent Card -->
+              <div class="hidden sm:block absolute -bottom-8 -left-8 bg-atelier-surface/95 backdrop-blur-md border border-atelier-stone-border p-4 sm:p-5 rounded-xl shadow-luxury max-w-[240px]">
+                <div class="flex items-center space-x-3 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-atelier-terracotta/20 flex items-center justify-center text-atelier-terracotta">
+                    <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-atelier-charcoal-muted block">Accolade</span>
+                    <span class="text-xs font-semibold text-atelier-charcoal block">AD Top 50 Studios</span>
+                  </div>
+                </div>
+                <p class="text-[11px] text-atelier-charcoal-muted leading-relaxed">
+                  Celebrated for poetic spatial balance and tactile honesty.
+                </p>
+              </div>
+
+              <!-- Subtle Stone Pill Badge -->
+              <div class="absolute -top-5 -right-3 sm:-right-5 bg-white border border-atelier-stone-border py-2 px-4 rounded-full shadow-subtle flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-700"></span>
+                <span class="text-[11px] tracking-wider uppercase font-medium text-atelier-charcoal">Milan · NYC · Paris</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- PHILOSOPHY / ABOUT SECTION -->
+    <!-- ======================================================== -->
+    <section id="about" class="py-20 sm:py-28 bg-atelier-surface border-y border-atelier-stone-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div class="relative rounded-2xl overflow-hidden shadow-luxury border-2 border-white/60 aspect-[4/5] img-zoom-container">
+              <img 
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80" 
+                alt="Architectural details of natural stone, warm ceramics, and diffused lighting" 
+                class="w-full h-full object-cover img-zoom-target"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-stone-900/10 pointer-events-none"></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 sm:space-y-7">
+            <span class="text-xs uppercase tracking-[0.3em] font-semibold text-atelier-terracotta block">
+              Our Studio Ethos
+            </span>
+
+            <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight text-atelier-charcoal">
+              Where organic stillness meets architectural precision.
+            </h2>
+
+            <p class="text-base sm:text-lg text-atelier-charcoal-muted leading-relaxed font-light">
+              Founded on the belief that a home should be an emotional refuge, Atelier Design Studio orchestrates harmonious environments stripped of visual noise. We favor authentic lime plasters, hand-hewn oak, monolithic travertine, and tailored upholstery that grow more beautiful with time.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              <div class="p-5 rounded-xl bg-atelier-bg border border-atelier-stone-border/80">
+                <span class="font-serif text-lg font-medium text-atelier-charcoal block mb-1">Authentic Materiality</span>
+                <p class="text-xs sm:text-sm text-atelier-charcoal-muted leading-normal">
+                  Sourced sustainably from heritage quarries and generational European ateliers.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-xl bg-atelier-bg border border-atelier-stone-border/80">
+                <span class="font-serif text-lg font-medium text-atelier-charcoal block mb-1">Luminous Choreography</span>
+                <p class="text-xs sm:text-sm text-atelier-charcoal-muted leading-normal">
+                  Custom circadian lighting concepts attuned to solar progression and mood.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="#services" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-atelier-terracotta hover:text-atelier-terracotta-dark transition-colors group">
+                <span>Explore Our Architectural Methodology</span>
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- 3. SERVICES SECTION (3-COLUMN CLEAN CARD GRID) -->
+    <!-- ======================================================== -->
+    <section id="services" class="py-20 sm:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16 sm:mb-20">
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-atelier-terracotta block mb-2">
+            Tailored Capabilities
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-normal text-atelier-charcoal leading-tight">
+            Comprehensive design services for discerning clients.
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-atelier-charcoal-muted font-light leading-relaxed">
+            From initial spatial blueprints to the final touch of tailored linen, we provide a unified design journey ensuring flawless execution.
+          </p>
+        </div>
+
+        <!-- 3-Column Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          
+          <!-- Service Card 01 -->
+          <div class="group bg-white rounded-2xl p-8 sm:p-10 border border-atelier-stone-border hover:border-atelier-terracotta transition-all duration-300 shadow-subtle hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-atelier-terracotta transition-all duration-300"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-3xl font-light text-atelier-terracotta">01</span>
+                <span class="w-10 h-10 rounded-full bg-atelier-stone-light flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white transition-colors duration-300">
+                  <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-medium text-atelier-charcoal mb-4 group-hover:text-atelier-terracotta transition-colors">
+                Interior Architecture & Spatial Planning
+              </h3>
+
+              <p class="text-sm text-atelier-charcoal-muted leading-relaxed mb-6 font-light">
+                Complete volumetric reconfiguration of private estates, lofts, and hospitality environments. We engineer spatial harmony through customized millwork, wall planes, and bespoke lighting choreographies.
+              </p>
+
+              <!-- Feature Bullets -->
+              <ul class="space-y-2.5 text-xs text-atelier-charcoal-muted border-t border-atelier-stone-border/60 pt-6">
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Structural reconfiguration & permit drawings</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Bespoke architectural joinery & cabinetry</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Integrated acoustic & lighting engineering</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-atelier-charcoal group-hover:text-atelier-terracotta transition-colors">
+                <span>Inquire Service</span>
+                <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 02 -->
+          <div class="group bg-white rounded-2xl p-8 sm:p-10 border border-atelier-stone-border hover:border-atelier-terracotta transition-all duration-300 shadow-subtle hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-atelier-terracotta transition-all duration-300"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-3xl font-light text-atelier-terracotta">02</span>
+                <span class="w-10 h-10 rounded-full bg-atelier-stone-light flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white transition-colors duration-300">
+                  <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                  </svg>
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-medium text-atelier-charcoal mb-4 group-hover:text-atelier-terracotta transition-colors">
+                Bespoke Furnishing & Art Curation
+              </h3>
+
+              <p class="text-sm text-atelier-charcoal-muted leading-relaxed mb-6 font-light">
+                Tailored furniture design commissions and worldwide vintage acquisitions. We partner directly with master artisans across France, Italy, and Japan to forge one-of-a-kind sculptural furnishings and textiles.
+              </p>
+
+              <!-- Feature Bullets -->
+              <ul class="space-y-2.5 text-xs text-atelier-charcoal-muted border-t border-atelier-stone-border/60 pt-6">
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Custom furniture drafting & artisan fabrication</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Mid-century & archival collector sourcing</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Private gallery art advisory & styling</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-atelier-charcoal group-hover:text-atelier-terracotta transition-colors">
+                <span>Inquire Service</span>
+                <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 03 -->
+          <div class="group bg-white rounded-2xl p-8 sm:p-10 border border-atelier-stone-border hover:border-atelier-terracotta transition-all duration-300 shadow-subtle hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-atelier-terracotta transition-all duration-300"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-3xl font-light text-atelier-terracotta">03</span>
+                <span class="w-10 h-10 rounded-full bg-atelier-stone-light flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white transition-colors duration-300">
+                  <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-medium text-atelier-charcoal mb-4 group-hover:text-atelier-terracotta transition-colors">
+                Turnkey Execution & White-Glove Handover
+              </h3>
+
+              <p class="text-sm text-atelier-charcoal-muted leading-relaxed mb-6 font-light">
+                Flawless governance from groundbreaking to unveiling. We oversee contractors, global freight logistics, customs clearances, and provide full turnkey dressing down to bespoke linen and scent curation.
+              </p>
+
+              <!-- Feature Bullets -->
+              <ul class="space-y-2.5 text-xs text-atelier-charcoal-muted border-t border-atelier-stone-border/60 pt-6">
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>General contractor oversight & quality control</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>International freight & white-glove transport</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-atelier-terracotta"></span>
+                  <span>Complete turnkey dressing & move-in readiness</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-atelier-charcoal group-hover:text-atelier-terracotta transition-colors">
+                <span>Inquire Service</span>
+                <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- 4. PORTFOLIO SECTION (RESPONSIVE MASONRY/GRID WITH UNSPLASH) -->
+    <!-- ======================================================== -->
+    <section id="portfolio" class="py-20 sm:py-32 bg-atelier-surface border-t border-atelier-stone-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Filter Pills -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-14 sm:mb-16 gap-6">
+          <div>
+            <span class="text-xs uppercase tracking-[0.3em] font-semibold text-atelier-terracotta block mb-2">
+              Curated Dossier
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-normal text-atelier-charcoal leading-tight">
+              Selected Architectural Works
+            </h2>
+          </div>
+
+          <!-- Interactive Category Filter -->
+          <div class="flex flex-wrap items-center gap-2" id="portfolioFilter">
+            <button class="filter-btn active px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-atelier-charcoal text-white" data-filter="all">
+              All Works
+            </button>
+            <button class="filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-white text-atelier-charcoal hover:bg-atelier-stone-border" data-filter="residential">
+              Residential
+            </button>
+            <button class="filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-white text-atelier-charcoal hover:bg-atelier-stone-border" data-filter="hospitality">
+              Hospitality
+            </button>
+            <button class="filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-white text-atelier-charcoal hover:bg-atelier-stone-border" data-filter="penthouse">
+              Penthouses
+            </button>
+          </div>
+        </div>
+
+        <!-- 2x2 / Dynamic Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10" id="projectsGrid">
+          
+          <!-- Project Card 1: Villa Sereno -->
+          <div class="project-card group relative bg-white rounded-2xl overflow-hidden border border-atelier-stone-border shadow-subtle hover:shadow-luxury-hover transition-all duration-500 cursor-pointer" data-category="residential" onclick="openProjectModal('sereno')">
+            <div class="aspect-[16/11] overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+                alt="Villa Sereno, Lake Como waterfront stone architecture" 
+                class="w-full h-full object-cover img-zoom-target group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-medium text-atelier-charcoal">
+                Lake Como, Italy
+              </div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta-light block mb-1">Residential Villa · 7,800 sq ft</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-light">Villa Sereno</h3>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex items-center justify-between">
+              <p class="text-xs text-atelier-charcoal-muted font-light line-clamp-1">
+                Monolithic Roman travertine, reclaimed chestnut timber, and floor-to-ceiling glass pavilions.
+              </p>
+              <span class="ml-4 w-8 h-8 rounded-full border border-atelier-stone-border flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white group-hover:border-atelier-terracotta transition-colors flex-shrink-0">
+                ↗
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Card 2: The Tribeca Loft -->
+          <div class="project-card group relative bg-white rounded-2xl overflow-hidden border border-atelier-stone-border shadow-subtle hover:shadow-luxury-hover transition-all duration-500 cursor-pointer" data-category="penthouse" onclick="openProjectModal('tribeca')">
+            <div class="aspect-[16/11] overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
+                alt="The Tribeca Loft penthouse interior with neutral organic linen and fluted stone" 
+                class="w-full h-full object-cover img-zoom-target group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-medium text-atelier-charcoal">
+                New York City
+              </div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta-light block mb-1">Penthouse Residence · 4,200 sq ft</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-light">The Tribeca Loft</h3>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex items-center justify-between">
+              <p class="text-xs text-atelier-charcoal-muted font-light line-clamp-1">
+                Warm minimalism contrasting exposed brick with fluted French limestone and brushed dark bronze.
+              </p>
+              <span class="ml-4 w-8 h-8 rounded-full border border-atelier-stone-border flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white group-hover:border-atelier-terracotta transition-colors flex-shrink-0">
+                ↗
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Card 3: Maison Saint-Germain -->
+          <div class="project-card group relative bg-white rounded-2xl overflow-hidden border border-atelier-stone-border shadow-subtle hover:shadow-luxury-hover transition-all duration-500 cursor-pointer" data-category="residential" onclick="openProjectModal('paris')">
+            <div class="aspect-[16/11] overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=80" 
+                alt="Maison Saint-Germain Paris Haussmann restored heritage apartment" 
+                class="w-full h-full object-cover img-zoom-target group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-medium text-atelier-charcoal">
+                Paris, France
+              </div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta-light block mb-1">Historic Heritage Apartment · 3,400 sq ft</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-light">Maison Saint-Germain</h3>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex items-center justify-between">
+              <p class="text-xs text-atelier-charcoal-muted font-light line-clamp-1">
+                Restored 19th-century cornices paired with monolithic Calacatta Viola and tactile linen wallcoverings.
+              </p>
+              <span class="ml-4 w-8 h-8 rounded-full border border-atelier-stone-border flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white group-hover:border-atelier-terracotta transition-colors flex-shrink-0">
+                ↗
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Card 4: Kyoto Pavilion -->
+          <div class="project-card group relative bg-white rounded-2xl overflow-hidden border border-atelier-stone-border shadow-subtle hover:shadow-luxury-hover transition-all duration-500 cursor-pointer" data-category="hospitality" onclick="openProjectModal('kyoto')">
+            <div class="aspect-[16/11] overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80" 
+                alt="Kyoto Pavilion luxury hospitality interior with hinoki wood and volcanic stone" 
+                class="w-full h-full object-cover img-zoom-target group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-medium text-atelier-charcoal">
+                Kyoto, Japan
+              </div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta-light block mb-1">Boutique Wellness Sanctuary · 9,200 sq ft</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-light">Kyoto Pavilion</h3>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex items-center justify-between">
+              <p class="text-xs text-atelier-charcoal-muted font-light line-clamp-1">
+                Hinoki cedar screen walls, honed basalt stone baths, and contemplation garden courtyards.
+              </p>
+              <span class="ml-4 w-8 h-8 rounded-full border border-atelier-stone-border flex items-center justify-center text-atelier-charcoal group-hover:bg-atelier-terracotta group-hover:text-white group-hover:border-atelier-terracotta transition-colors flex-shrink-0">
+                ↗
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dossier Consultation Banner -->
+        <div class="mt-16 bg-atelier-stone-light/80 rounded-2xl p-8 sm:p-12 border border-atelier-stone-border flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h4 class="font-serif text-2xl sm:text-3xl font-medium text-atelier-charcoal">
+              Seek access to our confidential private commissions?
+            </h4>
+            <p class="text-sm text-atelier-charcoal-muted font-light mt-1">
+              Over 40 private estates remain protected under non-disclosure. Dossier viewings are available by studio appointment.
+            </p>
+          </div>
+          <a href="#contact" class="flex-shrink-0 inline-flex items-center px-6 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-atelier-charcoal text-white hover:bg-atelier-terracotta transition-colors">
+            Request Private Dossier
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- 5. CONSULTATION INQUIRY FORM SECTION -->
+    <!-- ======================================================== -->
+    <section id="contact" class="py-20 sm:py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          
+          <!-- Contact Narrative Column (5 cols) -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <span class="text-xs uppercase tracking-[0.3em] font-semibold text-atelier-terracotta block mb-2">
+                Initiate a Commission
+              </span>
+              <h2 class="font-serif text-3xl sm:text-5xl font-normal text-atelier-charcoal leading-tight">
+                Let us sculpt your next chapter.
+              </h2>
+              <p class="mt-4 text-base text-atelier-charcoal-muted font-light leading-relaxed">
+                To preserve singular attention to detail, Atelier Design Studio accepts an intentionally limited number of residential and boutique architectural commissions each calendar season.
+              </p>
+            </div>
+
+            <!-- Direct Details Card -->
+            <div class="p-6 sm:p-8 rounded-2xl bg-atelier-surface border border-atelier-stone-border space-y-6">
+              <div>
+                <span class="text-xs uppercase tracking-[0.2em] text-atelier-charcoal-muted font-semibold block mb-1">Confidential Inquiries</span>
+                <a href="mailto:commissions@atelierdesignstudio.com" class="font-serif text-lg text-atelier-charcoal hover:text-atelier-terracotta transition-colors">
+                  commissions@atelierdesignstudio.com
+                </a>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase tracking-[0.2em] text-atelier-charcoal-muted font-semibold block mb-1">Direct Telephony</span>
+                <a href="tel:+12125550198" class="text-sm font-medium text-atelier-charcoal hover:text-atelier-terracotta transition-colors">
+                  +1 (212) 555-0198 (New York) &nbsp;|&nbsp; +33 1 42 68 55 00 (Paris)
+                </a>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase tracking-[0.2em] text-atelier-charcoal-muted font-semibold block mb-1">Studio Consultations</span>
+                <p class="text-xs text-atelier-charcoal-muted leading-relaxed">
+                  Private consultations conducted at our SoHo loft, Paris atelier, or on-site worldwide by arrangement.
+                </p>
+              </div>
+            </div>
+
+            <!-- Client Trust Quote -->
+            <div class="border-l-2 border-atelier-terracotta pl-4 py-1 italic font-serif text-lg text-atelier-charcoal-muted">
+              "The design journey with Atelier was as serene and transcendent as the home they sculpted for our family."
+              <span class="block text-xs uppercase tracking-wider not-italic text-atelier-charcoal font-sans mt-2 font-medium">
+                — Private Client, Lake Como Villa
+              </span>
+            </div>
+          </div>
+
+          <!-- Minimal Consultation Form (7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-atelier-stone-border shadow-luxury relative overflow-hidden">
+              
+              <!-- Form Heading -->
+              <div class="mb-8 border-b border-atelier-stone-border/80 pb-6">
+                <h3 class="font-serif text-2xl sm:text-3xl font-medium text-atelier-charcoal">
+                  Preliminary Consultation Form
+                </h3>
+                <p class="text-xs text-atelier-charcoal-muted mt-1">
+                  All submissions are held in strict professional confidentiality.
+                </p>
+              </div>
+
+              <!-- Interactive Form -->
+              <form id="consultationForm" onsubmit="handleFormSubmit(event)" class="space-y-6" novalidate>
+                
+                <!-- Row: Name & Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="fullName" class="block text-xs uppercase tracking-wider font-semibold text-atelier-charcoal mb-2">
+                      Full Name <span class="text-atelier-terracotta">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="fullName" 
+                      name="fullName" 
+                      required 
+                      placeholder="e.g. Julian Vance" 
+                      class="luxury-input w-full px-4 py-3.5 rounded-xl text-sm text-atelier-charcoal placeholder-stone-400"
+                    >
+                    <p id="nameError" class="hidden text-xs text-red-500 mt-1">Please provide your name.</p>
+                  </div>
+
+                  <div>
+                    <label for="email" class="block text-xs uppercase tracking-wider font-semibold text-atelier-charcoal mb-2">
+                      Email Address <span class="text-atelier-terracotta">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required 
+                      placeholder="julian@vance-holdings.com" 
+                      class="luxury-input w-full px-4 py-3.5 rounded-xl text-sm text-atelier-charcoal placeholder-stone-400"
+                    >
+                    <p id="emailError" class="hidden text-xs text-red-500 mt-1">Please enter a valid email address.</p>
+                  </div>
+                </div>
+
+                <!-- Row: Phone & Project Budget Dropdown -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="phone" class="block text-xs uppercase tracking-wider font-semibold text-atelier-charcoal mb-2">
+                      Phone Number <span class="text-atelier-terracotta">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      required 
+                      placeholder="+1 (555) 234-5678" 
+                      class="luxury-input w-full px-4 py-3.5 rounded-xl text-sm text-atelier-charcoal placeholder-stone-400"
+                    >
+                    <p id="phoneError" class="hidden text-xs text-red-500 mt-1">Please provide a contact phone number.</p>
+                  </div>
+
+                  <div>
+                    <label for="budget" class="block text-xs uppercase tracking-wider font-semibold text-atelier-charcoal mb-2">
+                      Project Budget <span class="text-atelier-terracotta">*</span>
+                    </label>
+                    <div class="relative">
+                      <select 
+                        id="budget" 
+                        name="budget" 
+                        required 
+                        class="luxury-input w-full px-4 py-3.5 rounded-xl text-sm text-atelier-charcoal appearance-none cursor-pointer pr-10"
+                      >
+                        <option value="" disabled selected>Select anticipated budget tier...</option>
+                        <option value="50k-100k">$50,000 – $100,000 (Specific Suite / Room Curation)</option>
+                        <option value="100k-250k">$100,000 – $250,000 (Full Apartment Architecture)</option>
+                        <option value="250k-500k">$250,000 – $500,000 (Luxury Private Residence)</option>
+                        <option value="500k+">$500,000+ (Comprehensive Estate or Hospitality)</option>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-atelier-charcoal-muted">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <p id="budgetError" class="hidden text-xs text-red-500 mt-1">Please select an anticipated investment tier.</p>
+                  </div>
+                </div>
+
+                <!-- Scope / Property Location (Optional contextual details) -->
+                <div>
+                  <label for="projectDetails" class="block text-xs uppercase tracking-wider font-semibold text-atelier-charcoal mb-2">
+                    Property Location & Architectural Vision
+                  </label>
+                  <textarea 
+                    id="projectDetails" 
+                    name="projectDetails" 
+                    rows="4" 
+                    placeholder="Tell us about the property (e.g. square footage, architectural style, desired timeline, or aesthetic inspirations)..." 
+                    class="luxury-input w-full px-4 py-3.5 rounded-xl text-sm text-atelier-charcoal placeholder-stone-400 resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-2">
+                  <button 
+                    type="submit" 
+                    id="submitBtn" 
+                    class="w-full py-4 px-8 rounded-full text-xs uppercase tracking-[0.25em] font-semibold bg-atelier-terracotta text-white hover:bg-atelier-terracotta-dark transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2"
+                  >
+                    <span id="btnText">Submit Consultation Request</span>
+                    <svg id="btnIcon" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                    <!-- Spinner (Hidden by default) -->
+                    <svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </button>
+                  <p class="text-[11px] text-center text-atelier-charcoal-muted mt-3">
+                    Our Senior Principal responds within 24 business hours to arrange an introductory dialogue.
+                  </p>
+                </div>
+
+              </form>
+
+              <!-- Success Feedback State (Hidden initially) -->
+              <div id="formSuccessMessage" class="hidden absolute inset-0 bg-white/98 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 sm:p-12 z-10 transition-all duration-500">
+                <div class="w-16 h-16 rounded-full bg-atelier-terracotta-light/30 text-atelier-terracotta flex items-center justify-center mb-6">
+                  <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <h4 class="font-serif text-3xl text-atelier-charcoal font-medium mb-3">
+                  Inquiry Received With Discretion
+                </h4>
+                <p class="text-sm text-atelier-charcoal-muted max-w-md mx-auto mb-8 leading-relaxed">
+                  Thank you for entrusting Atelier Design Studio. A bespoke architectural dossier and calendar invitation will be dispatched to your provided contact.
+                </p>
+                <button onclick="resetInquiryForm()" class="px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold border border-atelier-charcoal text-atelier-charcoal hover:bg-atelier-charcoal hover:text-white transition-colors">
+                  Submit Another Inquiry
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================== -->
+  <!-- 6. FOOTER WITH WORKING SOCIAL ICONS, ADDRESS & COPYRIGHT -->
+  <!-- ======================================================== -->
+  <footer class="bg-atelier-charcoal text-atelier-bg pt-20 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Row: Brand Statement & Newsletter -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-stone-800">
+        
+        <div class="lg:col-span-6 space-y-4">
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl sm:text-3xl tracking-[0.14em] font-medium text-white uppercase">
+              Atelier
+            </span>
+            <span class="text-[10px] tracking-[0.4em] text-stone-400 uppercase font-light mt-0.5">
+              Design Studio
+            </span>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md font-light leading-relaxed">
+            International architecture and interior studio crafting bespoke residences and cultural spaces characterized by quiet luxury, authentic materiality, and enduring grace.
+          </p>
+          <div class="pt-2">
+            <p class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta">
+              New York &nbsp;·&nbsp; Paris &nbsp;·&nbsp; Milan
+            </p>
+          </div>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="lg:col-span-6 lg:pl-12 flex flex-col justify-center">
+          <span class="text-xs uppercase tracking-[0.25em] text-atelier-terracotta font-semibold block mb-2">
+            The Atelier Journal
+          </span>
+          <p class="text-xs text-stone-400 mb-4 font-light">
+            Receive our quarterly monographs on tactile architecture, vintage curation, and spatial design.
+          </p>
+          <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
+            <input 
+              type="email" 
+              required 
+              placeholder="Enter your email address" 
+              class="w-full bg-stone-900 border border-stone-700 rounded-full px-5 py-3 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-atelier-terracotta"
+            >
+            <button 
+              type="submit" 
+              class="px-7 py-3 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-atelier-terracotta text-white hover:bg-atelier-terracotta-dark transition-colors flex-shrink-0"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p id="newsletterSuccess" class="hidden text-xs text-emerald-400 mt-2">Thank you for subscribing to our journal.</p>
+        </div>
+
+      </div>
+
+      <!-- Middle Row: Studio Addresses & Navigation -->
+      <div class="py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs text-stone-400">
+        
+        <!-- Address 1: New York -->
+        <div>
+          <h5 class="text-white uppercase tracking-[0.2em] font-medium mb-3 text-[11px]">New York Studio</h5>
+          <address class="not-italic space-y-1 font-light leading-relaxed">
+            <p>484 Broome Street, Penthouse 4</p>
+            <p>SoHo, New York, NY 10013</p>
+            <p class="pt-1 text-stone-300">+1 (212) 555-0198</p>
+            <p>ny@atelierdesignstudio.com</p>
+          </address>
+        </div>
+
+        <!-- Address 2: Paris -->
+        <div>
+          <h5 class="text-white uppercase tracking-[0.2em] font-medium mb-3 text-[11px]">Paris Atelier</h5>
+          <address class="not-italic space-y-1 font-light leading-relaxed">
+            <p>14 Rue de Beaujolais</p>
+            <p>Palais-Royal, 75001 Paris, France</p>
+            <p class="pt-1 text-stone-300">+33 1 42 68 55 00</p>
+            <p>paris@atelierdesignstudio.com</p>
+          </address>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="text-white uppercase tracking-[0.2em] font-medium mb-3 text-[11px]">Studio Index</h5>
+          <ul class="space-y-2 font-light">
+            <li><a href="#about" class="hover:text-atelier-terracotta transition-colors">Philosophy & Ethos</a></li>
+            <li><a href="#portfolio" class="hover:text-atelier-terracotta transition-colors">Curated Portfolio</a></li>
+            <li><a href="#services" class="hover:text-atelier-terracotta transition-colors">Architectural Services</a></li>
+            <li><a href="#contact" class="hover:text-atelier-terracotta transition-colors">Commission Inquiry</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Icons (Working SVGs) -->
+        <div>
+          <h5 class="text-white uppercase tracking-[0.2em] font-medium mb-3 text-[11px]">Connect With Us</h5>
+          <p class="font-light mb-4">Follow our architectural dispatches and process diaries.</p>
+          <div class="flex items-center space-x-3.5">
+            
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Atelier Design Studio on Instagram" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:bg-atelier-terracotta hover:border-atelier-terracotta transition-all duration-300">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- Pinterest -->
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Atelier Design Studio on Pinterest" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:bg-atelier-terracotta hover:border-atelier-terracotta transition-all duration-300">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.357-.053.211-.174.256-.402.151-1.499-.696-2.435-2.885-2.435-4.646 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Atelier Design Studio on LinkedIn" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:bg-atelier-terracotta hover:border-atelier-terracotta transition-all duration-300">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+
+            <!-- ArchDaily / Architecture -->
+            <a href="https://archdaily.com" target="_blank" rel="noopener noreferrer" aria-label="Atelier Design Studio on ArchDaily" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:bg-atelier-terracotta hover:border-atelier-terracotta transition-all duration-300">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2L2 22h20L12 2zm0 4.8L18.4 19H5.6L12 6.8z"/>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Copyright & Legal Notice -->
+      <div class="pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 font-light gap-4">
+        <p>
+          &copy; 2026 Atelier Design Studio. All rights reserved. Registered architectural and interior design practice.
+        </p>
+        <div class="flex items-center space-x-6">
+          <a href="#hero" class="hover:text-stone-300 transition-colors">Privacy Policy</a>
+          <span>·</span>
+          <a href="#hero" class="hover:text-stone-300 transition-colors">Terms of Commission</a>
+          <span>·</span>
+          <a href="#hero" class="hover:text-stone-300 transition-colors">Back to Top ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: PROJECT DETAIL LIGHTBOX -->
+  <!-- ======================================================== -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="relative bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-atelier-stone-border my-8 transform transition-all">
+      
+      <!-- Close Button -->
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 text-atelier-charcoal hover:bg-atelier-terracotta hover:text-white flex items-center justify-center transition-colors shadow-md focus:outline-none" aria-label="Close dialog">
+        ✕
+      </button>
+
+      <div class="aspect-[16/10] overflow-hidden bg-stone-900">
+        <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-6 sm:p-10 space-y-4">
+        <div class="flex items-center justify-between">
+          <span id="modalLocation" class="text-xs uppercase tracking-[0.25em] font-semibold text-atelier-terracotta"></span>
+          <span id="modalSpecs" class="text-xs text-atelier-charcoal-muted font-medium"></span>
+        </div>
+        <h3 id="modalTitle" class="font-serif text-3xl font-medium text-atelier-charcoal"></h3>
+        <p id="modalDesc" class="text-sm text-atelier-charcoal-muted leading-relaxed font-light"></p>
+        
+        <div class="pt-4 border-t border-atelier-stone-border flex flex-wrap gap-2" id="modalTags"></div>
+        
+        <div class="pt-4 flex justify-end">
+          <a href="#contact" onclick="closeProjectModal()" class="inline-flex items-center px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-atelier-terracotta text-white hover:bg-atelier-terracotta-dark transition-colors">
+            Commission Similar Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- JAVASCRIPT: INTERACTION & LOGIC -->
+  <!-- ======================================================== -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // 2. Portfolio Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active button styles
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-atelier-charcoal', 'text-white', 'active');
+          b.classList.add('bg-white', 'text-atelier-charcoal');
+        });
+        btn.classList.add('bg-atelier-charcoal', 'text-white', 'active');
+        btn.classList.remove('bg-white', 'text-atelier-charcoal');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s ease';
+              card.style.opacity = '1';
+            }, 50);
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 3. Project Detail Modal Data & Handler
+    const projectDatabase = {
+      sereno: {
+        title: "Villa Sereno",
+        location: "Lake Como, Italy",
+        specs: "Private Waterfront Estate · 7,800 sq ft · Completed 2025",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+        desc: "Constructed upon a terraced stone promontory overlooking Lake Como, Villa Sereno balances monolithic Roman travertine wall planes with continuous floor-to-ceiling minimal glazing. We crafted custom dark chestnut millwork and sourced raw Belgian linens to ground the residence in timeless tranquility.",
+        tags: ["Roman Travertine", "Custom Joinery", "Belgian Linen", "Circadian Lighting"]
+      },
+      tribeca: {
+        title: "The Tribeca Loft",
+        location: "New York City, USA",
+        specs: "Historic Warehouse Penthouse · 4,200 sq ft · Completed 2025",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+        desc: "A sympathetic reimagining of a late 19th-century textile warehouse. The interior marries original masonry with hand-troweled warm lime plaster, fluted French limestone fireplace surrounds, and blackened architectural steel partitions.",
+        tags: ["Lime Plaster", "Blackened Steel", "French Limestone", "Archival Furnishings"]
+      },
+      paris: {
+        title: "Maison Saint-Germain",
+        location: "Paris, France",
+        specs: "Historic Haussmann Flat · 3,400 sq ft · Completed 2024",
+        image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85",
+        desc: "Balancing heritage preservation with avant-garde minimalism. Original gilded moldings and chevron parquet were painstakingly restored by master Parisian artisans, complemented by a sculptural monolithic Calacatta Viola kitchen island and bespoke mohair upholstery.",
+        tags: ["Haussmann Heritage", "Calacatta Viola", "Chevron Parquet", "Art Curation"]
+      },
+      kyoto: {
+        title: "Kyoto Pavilion",
+        location: "Kyoto, Japan",
+        specs: "Boutique Wellness Sanctuary · 9,200 sq ft · Completed 2026",
+        image: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1400&q=85",
+        desc: "Designed around a series of serene inner moss courtyards, the Kyoto Pavilion explores tactile wabi-sabi aesthetics. Hand-planed Yoshino Hinoki cedar, dark basalt onsen baths, and natural washi paper screens create an atmosphere of profound restorative stillness.",
+        tags: ["Yoshino Hinoki", "Basalt Stone", "Washi Paper", "Japanese Joinery"]
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectDatabase[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalLocation').textContent = data.location;
+      document.getElementById('modalSpecs').textContent = data.specs;
+      document.getElementById('modalDesc').textContent = data.desc;
+      document.getElementById('modalImage').src = data.image;
+      document.getElementById('modalImage').alt = data.title;
+
+      const tagsContainer = document.getElementById('modalTags');
+      tagsContainer.innerHTML = '';
+      data.tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'px-3 py-1 bg-atelier-stone-light text-[11px] uppercase tracking-wider text-atelier-charcoal rounded-md';
+        span.textContent = t;
+        tagsContainer.appendChild(span);
+      });
+
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeProjectModal();
+    });
+
+    // Close modal on background click
+    document.getElementById('projectModal').addEventListener('click', (e) => {
+      if (e.target.id === 'projectModal') closeProjectModal();
+    });
+
+    // 4. Consultation Form Submission & Validation
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('consultationForm');
+      const nameInput = document.getElementById('fullName');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const budgetInput = document.getElementById('budget');
+
+      let isValid = true;
+
+      // Validation
+      if (!nameInput.value.trim()) {
+        document.getElementById('nameError').classList.remove('hidden');
+        nameInput.classList.add('border-red-400');
+        isValid = false;
+      } else {
+        document.getElementById('nameError').classList.add('hidden');
+        nameInput.classList.remove('border-red-400');
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+        document.getElementById('emailError').classList.remove('hidden');
+        emailInput.classList.add('border-red-400');
+        isValid = false;
+      } else {
+        document.getElementById('emailError').classList.add('hidden');
+        emailInput.classList.remove('border-red-400');
+      }
+
+      if (!phoneInput.value.trim()) {
+        document.getElementById('phoneError').classList.remove('hidden');
+        phoneInput.classList.add('border-red-400');
+        isValid = false;
+      } else {
+        document.getElementById('phoneError').classList.add('hidden');
+        phoneInput.classList.remove('border-red-400');
+      }
+
+      if (!budgetInput.value) {
+        document.getElementById('budgetError').classList.remove('hidden');
+        budgetInput.classList.add('border-red-400');
+        isValid = false;
+      } else {
+        document.getElementById('budgetError').classList.add('hidden');
+        budgetInput.classList.remove('border-red-400');
+      }
+
+      if (!isValid) return;
+
+      // Visual Feedback & Spinner
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const btnSpinner = document.getElementById('btnSpinner');
+
+      btnText.textContent = 'Transmitting Dossier...';
+      btnIcon.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+      submitBtn.disabled = true;
+
+      // Simulate luxury consultation receipt after 900ms
+      setTimeout(() => {
+        btnText.textContent = 'Submit Consultation Request';
+        btnIcon.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+        submitBtn.disabled = false;
+
+        // Show elegant success panel
+        document.getElementById('formSuccessMessage').classList.remove('hidden');
+      }, 900);
+    }
+
+    function resetInquiryForm() {
+      document.getElementById('consultationForm').reset();
+      document.getElementById('formSuccessMessage').classList.add('hidden');
+    }
+
+    // 5. Newsletter Submission Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const successEl = document.getElementById('newsletterSuccess');
+      successEl.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        successEl.classList.add('hidden');
+      }, 6000);
+    }
+  </script>
+
+</body>
+</html>
+
